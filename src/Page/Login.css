@@ -1,0 +1,21 @@
+.a {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+  }
+  
+  .forgot-update {
+      text-align: center;
+      padding: 10px;
+  }
+  
+  .forgot-update a {
+      color: #337ab7;
+      text-decoration: none;
+  }
+  
+  .forgot-update a:hover {
+      text-decoration: underline;
+  }
