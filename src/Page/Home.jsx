@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
+
+
 const Home = () => {
   const [jobs, setJobs] = useState([]);
   const [filter, setFilter] = useState('all');
@@ -14,8 +16,8 @@ const Home = () => {
 
   const companies = [
     {
-      rank: 'FAST500',
-      logo: 'https://i.imgur.com/9u46f2y.png',
+      rank: 'VNR500',
+      logo: '../image/1.png',
       name: 'CÔNG TY CỔ PHẦN ADEMAX',
     },
     {
@@ -78,7 +80,7 @@ const Home = () => {
               <h2>Mức lương cao dành cho bạn.</h2>
               <div className="search-bar">
                 <input type="text" placeholder="Vị trí ứng tuyển" />
-                <button>Tìm kiếm</button>
+                <button className='btn'>Tìm kiếm</button>
               </div>
             </div>
           </div>
@@ -88,9 +90,9 @@ const Home = () => {
 
         <section className="jobs">
           <div className="container">
-            <h2>Việc làm tốt nhất</h2>
+            <h2 className='jtitle'>Việc làm tốt nhất</h2>
             <div className="jobs-filter">
-              <select value={filter} onChange={handleFilterChange}>
+              <select className='search' value={filter} onChange={handleFilterChange}>
                 <option value="all">Tất cả</option>
                 <option value="ngau-nhien">Ngẫu nhiên</option>
                 <option value="ha-noi">Hà Nội</option>
@@ -127,13 +129,13 @@ const Home = () => {
         <section>
         <div className="app2">
           <div className="container2">
-            <h1>Top Công ty hàng đầu</h1>
+            <h1 className='name'>Top Công ty hàng đầu</h1>
             <div className="companies">
             {companies.map((company) => (
               <div key={company.name} className="company">
                 <div className="rank">{company.rank}</div>
                 <img src={company.logo} alt={company.name} className="logo" />
-                <div className="name">{company.name}</div>
+                <div className="cpname">{company.name}</div>
               </div>
           ))}
             </div>
@@ -148,8 +150,8 @@ const Home = () => {
         {/* top ngành nghề nổi bật */}
         <section>
           <div className="container3">
-            <h1>Top ngành nghề nổi bật</h1>
-            <p>Bạn muốn tìm việc mới? Xem danh sách việc làm tại đây.</p>
+            <h1 className='top'>Top ngành nghề nổi bật</h1>
+            <p className='w'>Bạn muốn tìm việc mới? Xem danh sách việc làm tại đây.</p>
             <div className="job-categories">
               {jobCategories.map((category, index) => (
                 <div key={index} className="job-category">

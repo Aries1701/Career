@@ -39,6 +39,7 @@ const Login = () => {
                 <Stack gap={2}>
                 <div className="p-2"><Link to="/forgotpassword"><label htmlFor="">Forgot Password</label></Link></div>
                 <div className="p-2"><Link to="/updatepersonalinfo"><label htmlFor="">Update Personal Info</label></Link></div>
+                <div className="p-2"><Link to="/updatecompanyinfo"><label htmlFor="">Update Company Info</label></Link></div>
                 </Stack>
                 </div>
             </div>        
