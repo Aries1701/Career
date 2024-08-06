@@ -40,6 +40,10 @@ const Login = () => {
                 <div className="p-2"><Link to="/forgotpassword"><label htmlFor="">Forgot Password</label></Link></div>
                 <div className="p-2"><Link to="/updatepersonalinfo"><label htmlFor="">Update Personal Info</label></Link></div>
                 <div className="p-2"><Link to="/updatecompanyinfo"><label htmlFor="">Update Company Info</label></Link></div>
+                <div className="p-2"><Link to="/jobdetails"><label htmlFor="">Job Details</label></Link></div>
+                <div className="p-2"><Link to="/job"><label htmlFor="">Job</label></Link></div>
+                <div className="p-2"><Link to="/postjob"><label htmlFor="">Post Job</label></Link></div>
+                <div className="p-2"><Link to="/updatejob"><label htmlFor="">Update Job</label></Link></div>
                 </Stack>
                 </div>
             </div>        

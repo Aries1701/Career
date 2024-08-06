@@ -1,0 +1,136 @@
+.job-details-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .job-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .job-info {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .job-info-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .job-info-icon {
+    font-size: 18px;
+    color: #007bff;
+    margin-right: 5px;
+  }
+  
+  .job-info-value {
+    font-size: 16px;
+  }
+  
+  .job-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .job-action-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .job-content {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .job-description {
+    flex: 1;
+  }
+  
+  .job-description-images {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .job-description-images img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .job-company-info {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .job-company-logo {
+    width: 100px;
+  }
+  
+  .job-company-logo img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .job-company-details {
+    flex: 1;
+  }
+  
+  .job-company-details h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .job-company-details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .job-company-details li {
+    margin-bottom: 5px;
+  }
+  
+  .job-additional-info {
+    flex: 1;
+  }
+  
+  .job-info-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .job-info-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .job-info-list .job-info-icon {
+    font-size: 16px;
+    color: #007bff;
+    margin-right: 5px;
+  }
+  
+  .job-info-list .job-info-value {
+    font-size: 14px;
+  }
