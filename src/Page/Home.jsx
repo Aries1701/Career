@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-
+import Form from 'react-bootstrap/Form';
 
 
 const Home = () => {
@@ -79,7 +79,10 @@ const Home = () => {
               <h1>Công nghệ AI dự đoán, cá nhân hóa việc làm</h1>
               <h2>Mức lương cao dành cho bạn.</h2>
               <div className="search-bar">
-                <input type="text" placeholder="Vị trí ứng tuyển" />
+              <div className='input-search'>
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input  placeholder="Vị trí ứng tuyển" />
+              </div>
                 <button className='btn'>Tìm kiếm</button>
               </div>
             </div>
@@ -92,14 +95,14 @@ const Home = () => {
           <div className="container">
             <h2 className='jtitle'>Việc làm tốt nhất</h2>
             <div className="jobs-filter">
-              <select className='search' value={filter} onChange={handleFilterChange}>
-                <option value="all">Tất cả</option>
+              <Form.Select class="form-select form-select-sm" aria-label="Default select example" size='sm' value={filter} onChange={handleFilterChange}>
+              <option value="all">Tất cả</option>
                 <option value="ngau-nhien">Ngẫu nhiên</option>
                 <option value="ha-noi">Hà Nội</option>
-                <option value="ho-chi-minh">Thành phố Hồ Chí Minh</option>
+                <option value="ho-chi-minh">TP Hồ Chí Minh</option>
                 <option value="mien-bac">Miền Bắc</option>
                 <option value="mien-nam">Miền Nam</option>
-              </select>
+    </Form.Select>
             </div>
             <div className="jobs-list">
               {jobs.map((job) => (

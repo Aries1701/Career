@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
-// import '../App.css'
 import './Signin.css'
+
 const Signin = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -33,27 +33,27 @@ const Signin = () => {
     }
     return (
         <div className="container">
-            <div className='a'>
-            <div className="mt-3 mb-3">
-                <label htmlFor="">Username</label>
-                <input type="text" onChange={changeUsername} className="form-control form-control-sm" />
+        <div className='ctn'>
+            <div className="form-group">
+                <label htmlFor="username">Username</label>
+                <input type="text" onChange={changeUsername} className="form-control" id="username" placeholder="Username" />
             </div>
-            <div className="mt-3 mb-3">
-                <label htmlFor="">Password</label>
-                <input type="password" className="form-control form-control-sm" onChange={changePassword} />
+            <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input type="password" className="form-control" id="password" placeholder="Password" onChange={changePassword} />
             </div>
-            <div className="mt-3 mb-3">
-                <label htmlFor="">Email</label>
-                <input type="email" className="form-control form-control-sm" onChange={changeEmail} />
+            <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input type="email" className="form-control" id="email" placeholder="Email" onChange={changeEmail} />
             </div>
-            <div className="mt-3 mb-3">
-                <label htmlFor="">Full Name</label>
-                <input type="text" className="form-control form-control-sm" onChange={changeFullName} />
+            <div className="form-group">
+                <label htmlFor="fullName">Full Name</label>
+                <input type="text" className="form-control" id="fullName" placeholder="Full Name" onChange={changeFullName} />
             </div>
-            <div id='button-signlog' className="mt-3 mb-3">
-                <button type="button" className="btn btn-primary btn-sm" onClick={() => register()}>Register</button>
+            <div className="form-group">
+                <button type="button" className="btn btn-primary" onClick={() => register()}>Register</button>
             </div>
-            </div>
+        </div>    
         </div>
     )
 }

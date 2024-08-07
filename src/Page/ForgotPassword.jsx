@@ -18,7 +18,7 @@ function ForgotPassword() {
         <div className="form-group">
           <label htmlFor="email" className="label">
             Email
-            <span className="required"></span>
+            <span className="required">*</span>
           </label>
           <input
             type="email"
