@@ -145,29 +145,7 @@ function Job() {
             </div>
           </div>
           <button type="submit" className="search-button">
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.4167 9.58333L6.41667 13.5833"
-                stroke="#fff"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M13.5833 6.41667L9.58333 2.41667"
-                stroke="#fff"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            Tìm kiếm
+          <i class="fa-solid fa-magnifying-glass"></i> Tìm kiếm
           </button>
         </div>
       </form>

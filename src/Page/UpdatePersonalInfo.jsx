@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Form from 'react-bootstrap/Form';
-
+import "./UpdatePersonalInfo.css"
 const UpdatePersonalInfo = () => {
   const [fullName, setFullName] = useState('');
   const [age, setAge] = useState('');
@@ -105,7 +105,9 @@ const UpdatePersonalInfo = () => {
           <textarea className="form-control form-control-sm" value={selfDescription} onChange={handleSelfDescriptionChange} required maxLength={1000} />
         </div>
         {error && <div className="error">{error}</div>}
+        <div className='btn-done'>
         <button className="btn btn-primary btn-sm" type="submit">Done</button>
+        </div>
       </form>
     </div>
   );

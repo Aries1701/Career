@@ -11,6 +11,7 @@ import JobDetails from '../Page/JobDetails'
 import Job from '../Page/Job'
 import PostJob from '../Page/PostJob'
 import UpdateJob from '../Page/UpdateJob'
+import JobList from '../Page/JobList/JobList'
 
 
 
@@ -29,6 +30,7 @@ const AppRouter = () => {
         <Route path="/jobdetails" element={<JobDetails/>}/>
         <Route path="/job" element={<Job/>}/>
         <Route path="/postjob" element={<PostJob/>}/>
+        <Route path="/joblist" element={<JobList/>}/>
         <Route path="/updatejob" element={<UpdateJob/>}/>
 
       </Routes>

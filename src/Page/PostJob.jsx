@@ -3,61 +3,89 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 
 const PostJob = () => {
-  const [title, setTitle] = useState('');
-  const [deadline, setDeadline] = useState(new Date());
-  const [field, setField] = useState('');
-  const [salary, setSalary] = useState('');
-  const [location, setLocation] = useState('');
-  const [position, setPosition] = useState('');
-  const [quantity, setQuantity] = useState(1);
-  const [description, setDescription] = useState('');
+  const [job, setJob] = useState("");
+  const [earning, setEarning] = useState("");
+  const [location, setLocation] = useState("");
+  const [profession, setProfession] = useState("");
+  const [position, setPosition] = useState("");
+  const [numberPeople, setNumberPeople] = useState("");
+  const [description, setDescription] = useState("");
+  const [date, setDate] = useState("");
+  const [companyName, setCompanyName] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('/api/jobs', {
-        title,
-        deadline,
-        field,
-        salary,
-        location,
-        position,
-        quantity,
-        description,
-      });
-      console.log(response.data);
-      alert('Đã đăng tin tuyển dụng');
-      // Quay trở lại màn hình danh sách tin tuyển dụng
-      window.location.href = '/jobs';
-    } catch (error) {
-      console.error(error);
+  const changeJob = (e) => {
+    setJob(e.target.value);
+  }
+  const changeEarning = (e) => {
+    setEarning(e.target.value);
+  }
+  const changeLocation = (e) => {
+    setLocation(e.target.value);
+  }
+  const changeProfession = (e) => {
+    setProfession(e.target.value);
+  }
+  const changePosition = (e) => {
+    setPosition(e.target.value);
+  }
+  const changeNumberPeople = (e) => {
+    setNumberPeople(e.target.value);
+  }
+  const changeDescription = (e) => {
+    setDescription(e.target.value);
+  }
+  const changeDate = (e) => {
+    setDate(e.target.value);
+  }
+  const changeCompanyName = (e) => {
+    setCompanyName(e.target.value);
+  }
+  const registerjob = () => {
+    const data = {
+      job,
+      earning,
+      location,
+      position,
+      description,
+      companyName,
+      numberPeople,
+      profession,
+      date
     }
+    axios.post("http://localhost:8080/registerjob", data)
+    alert("Success")
   };
 
   return (
     <div>
       <h1>Đăng tin tuyển dụng</h1>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div className="form-group mt-3 mb-3">
           <label>Tiêu đề tin:</label>
           <input className="form-control form-control-sm"
             type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={changeJob}
             maxLength={100}
           />
         </div>
         <div className="form-group mt-3 mb-3">
+          <label>Tên công ty:</label>
+          <input className="form-control form-control-sm"
+            type="text"
+            onChange={changeCompanyName}
+            maxLength={300}
+          />
+          </div>
+        <div className="form-group mt-3 mb-3">
           <label>Hạn ứng tuyển:</label>
           <input className="form-control form-control-sm"
-            type="datetime-local"
-            value={deadline}
-            onChange={(e) => setDeadline(e.target.value)}
+            type="text"
+            onChange={changeDate}
           />
         </div>
         <div className="form-group mt-3 mb-3">
           <label>Lĩnh vực:</label>
-          <Form.Select class="form-select form-select-sm" aria-label="Default select example" size='sm' value={field} onChange={(e) => setField(e.target.value)}>
+          <Form.Select class="form-select form-select-sm" aria-label="Default select example" size='sm'onChange={changeProfession}>
             <option value="">Chọn lĩnh vực</option>
             <option value="IT">IT</option>
             <option value="Marketing">Marketing</option>
@@ -68,17 +96,15 @@ const PostJob = () => {
           <label>Mức lương:</label>
           <input className="form-control form-control-sm"
             type="text"
-            value={salary}
-            onChange={(e) => setSalary(e.target.value)}
+            onChange={changeEarning}
             maxLength={100}
           />
         </div>
-        <div className="form-group mt-3 mb-3">
+          <div className="form-group mt-3 mb-3">
           <label>Địa điểm làm việc:</label>
           <input className="form-control form-control-sm"
             type="text"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
+            onChange={changeLocation}
             maxLength={300}
           />
         </div>
@@ -86,8 +112,7 @@ const PostJob = () => {
           <label>Vị trí việc làm:</label>
           <input className="form-control form-control-sm"
             type="text"
-            value={position}
-            onChange={(e) => setPosition(e.target.value)}
+            onChange={changePosition}
             maxLength={300}
           />
         </div>
@@ -95,8 +120,7 @@ const PostJob = () => {
           <label>Số lượng ứng viên dự kiến:</label>
           <input className="form-control form-control-sm"
             type="number"
-            value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
+            onChange={changeNumberPeople}
             min={1}
             max={10000}
           />
@@ -104,12 +128,11 @@ const PostJob = () => {
         <div className="form-group mt-3 mb-3">
           <label>Mô tả bổ sung:</label>
           <textarea className="form-control form-control-sm"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            onChange={changeDescription}
             maxLength={5000}
           />
         </div>
-        <button type="submit">Đăng tin</button>
+        <button onClick={()=> registerjob()} type="submit">Đăng tin</button>
       </form>
     </div>
   );
