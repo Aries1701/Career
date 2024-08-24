@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
@@ -57,19 +57,25 @@ const JobList = (props) => {
         <div className="container">
             <div>
                 <nav id="nav-bar" className="navbar navbar-expand-lg bg-body-tertiary">
-                    <h4>Jobs</h4>
-                    </nav>
+                    <h4>Movies</h4>
+                </nav>
                 <div className="list-group">
                     {
                         listJob.map((value, i) => {
                             return (
                                 <div key={i}>
-                                    <Card style={{ width: '200px', height:'425px' }}>
-                                        {/* <Card.Img style={{width:'199px', height:'300px'}} variant="top" src={value.image} /> */}
+                                    <Card style={{ width: '200px', height: '300px' }}>
+                                        <Card.Img style={{ width: '199px', height: '200px' }} variant="top" src={value.companyImg} />
                                         <Card.Body>
-                                            <Card.Title>{value.job}</Card.Title>
+                                            <Card.Title>{value.job} {value.profession}</Card.Title>
                                             <Card.Text>
-                                                {value.job}p {value.date}
+                                                <div>
+                                                    {value.companyName}
+                                                </div>
+                                                Yêu cầu: {value.description}
+                                                <div>
+                                                    Hạn ứng tuyển: {value.date}
+                                                </div>
                                             </Card.Text>
                                         </Card.Body>
                                     </Card>

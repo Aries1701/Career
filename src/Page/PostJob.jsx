@@ -12,6 +12,7 @@ const PostJob = () => {
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
   const [companyName, setCompanyName] = useState("");
+  const [companyImg, setCompanyImg] = useState("");
 
   const changeJob = (e) => {
     setJob(e.target.value);
@@ -40,6 +41,9 @@ const PostJob = () => {
   const changeCompanyName = (e) => {
     setCompanyName(e.target.value);
   }
+  const changeCompanyImg = (e) => {
+    setCompanyImg(e.target.value);
+  }
   const registerjob = () => {
     const data = {
       job,
@@ -50,7 +54,8 @@ const PostJob = () => {
       companyName,
       numberPeople,
       profession,
-      date
+      date,
+      companyImg
     }
     axios.post("http://localhost:8080/registerjob", data)
     alert("Success")
@@ -73,6 +78,14 @@ const PostJob = () => {
           <input className="form-control form-control-sm"
             type="text"
             onChange={changeCompanyName}
+            maxLength={300}
+          />
+          </div>
+          <div className="form-group mt-3 mb-3">
+          <label>Ảnh công ty:</label>
+          <input className="form-control form-control-sm"
+            type="text"
+            onChange={changeCompanyImg}
             maxLength={300}
           />
           </div>
