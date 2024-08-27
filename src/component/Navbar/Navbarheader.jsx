@@ -17,7 +17,7 @@ const Navbarheader = () => {
           <Nav className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
             navbarScroll>
-              <Nav.Link href="#features">Doanh nghiệp</Nav.Link>
+              <Nav.Link href="/commpanyinfo">Doanh nghiệp</Nav.Link>
               <Nav.Link href="/personinfo">Cá nhân</Nav.Link>
               <NavDropdown className='dd' title="Chức năng" id="basic-nav-dropdown">
               <NavDropdown.Item href="/updatepersonalinfo">Update Personal Info</NavDropdown.Item>

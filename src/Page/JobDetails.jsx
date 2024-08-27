@@ -1,17 +1,25 @@
-import React from 'react';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
-const JobDetail = ({ job }) => {
+const JobDetail = () => {
+  const { jobId } = useParams();
+  const [value, setJob] = useState({});
+
+  useEffect(() => {
+    const fetchJob = async () => {
+      const result = await axios.get(`http://localhost:8080/job/${jobId}`);
+      setJob(result.data);
+    };
+    fetchJob();
+  }, [jobId]);
+
   return (
     <div>
-      <h2>{job.title}</h2>
-      <p>Ngày đăng tin: {job.postedDate}</p>
-      <p>Hạn ứng tuyển: {job.deadline}</p>
-      <p>Lĩnh vực tuyển dụng: {job.field}</p>
-      <p>Mức lương: {job.salary}</p>
-      <p>Địa điểm làm việc: {job.location}</p>
-      <p>Vị trí việc làm: {job.position}</p>
-      <p>Số lượng ứng viên: {job.applicantCount}</p>
-      <p>Mô tả: {job.description}</p>
+      <h2>{value.job} {value.profession}</h2>
+      <p>Company: {value.companyName}</p>
+      <p>Description: {value.description}</p>
+      <p>Date: {value.date}</p>
     </div>
   );
 };

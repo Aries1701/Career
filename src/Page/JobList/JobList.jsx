@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import './JobList.css'
 
 
 const JobList = (props) => {
@@ -55,42 +57,44 @@ const JobList = (props) => {
 
     return (
         <div className="container">
-            <div>
-                <nav id="nav-bar" className="navbar navbar-expand-lg bg-body-tertiary">
-                    <h4>Movies</h4>
-                </nav>
-                <div className="list-group">
-                    {
-                        listJob.map((value, i) => {
-                            return (
-                                <div key={i}>
-                                    <Card style={{ width: '200px', height: '300px' }}>
-                                        <Card.Img style={{ width: '199px', height: '200px' }} variant="top" src={value.companyImg} />
-                                        <Card.Body>
-                                            <Card.Title>{value.job} {value.profession}</Card.Title>
-                                            <Card.Text>
-                                                <div>
-                                                    {value.companyName}
-                                                </div>
-                                                Yêu cầu: {value.description}
-                                                <div>
-                                                    Hạn ứng tuyển: {value.date}
-                                                </div>
-                                            </Card.Text>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
+          <div>
+            <nav id="nav-bar" className="navbar navbar-expand-lg bg-body-tertiary">
+              <h4>Job</h4>
+            </nav>
+            <div className="list-group">
+              {
+                listJob.map((value, i) => {
+                  return (
+                    <div className="card" key={i}>
+                      <Card >
+                        <Card.Img  variant="top" src={value.companyImg} />
+                        <Card.Body>
+                          <Card.Title>
+                            <Link to={`/joblist/${value.id}`}>{value.job} {value.profession}</Link>
+                          </Card.Title>
+                          <Card.Text>
+                            <div>
+                              {value.companyName}
+                            </div>
+                            Yêu cầu: {value.description}
+                            <div>
+                              Hạn ứng tuyển: {value.date}
+                            </div>
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </div>
+                  )
+                })
+              }
             </div>
-            <ul className="pagination pagination-sm">
-                <li className="page-item"><button className="page-link" onClick={() => previous()}>Previous</button></li>
-                <li className="page-item"><button className="page-link" onClick={() => next()}>Next</button></li>
-            </ul>
+          </div>
+          <ul className="pagination pagination-sm">
+            <li className="page-item"><button className="page-link" onClick={() => previous()}>Previous</button></li>
+            <li className="page-item"><button className="page-link" onClick={() => next()}>Next</button></li>
+          </ul>
         </div>
-    )
+      )
 }
 
 export default JobList;
