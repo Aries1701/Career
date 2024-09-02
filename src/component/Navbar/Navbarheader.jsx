@@ -17,15 +17,13 @@ const Navbarheader = () => {
           <Nav className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
             navbarScroll>
-              <Nav.Link href="/commpanyinfo">Doanh nghiệp</Nav.Link>
-              <Nav.Link href="/personinfo">Cá nhân</Nav.Link>
+              <Nav.Link href="companyinfo">Doanh nghiệp</Nav.Link>
+              <Nav.Link href="personinfo">Cá nhân</Nav.Link>
               <NavDropdown className='dd' title="Chức năng" id="basic-nav-dropdown">
               <NavDropdown.Item href="/updatepersonalinfo">Update Personal Info</NavDropdown.Item>
               <NavDropdown.Item href="/updatecompanyinfo">Update Company Info</NavDropdown.Item>
-              <NavDropdown.Item href="/jobdetails">Job Details</NavDropdown.Item>
               <NavDropdown.Item href="/job">Job</NavDropdown.Item>
               <NavDropdown.Item href="/postjob">Post Job</NavDropdown.Item>
-              <NavDropdown.Item href="/updatejob">Update Job</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           </div>

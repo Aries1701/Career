@@ -10,10 +10,10 @@ import UpdateCompanyInfo from '../Page/UpdateCompanyInfo'
 import JobDetails from '../Page/JobDetails'
 import Job from '../Page/Job'
 import PostJob from '../Page/PostJob'
-import UpdateJob from '../Page/UpdateJob'
 import JobList from '../Page/JobList/JobList'
-import PersonInfo from '../Page/PersonInfo'
 import CommpanyInfo from '../Page/CommpanyInfo'
+import PersonInfo from '../Page/PersonInfo'
+
 
 
 
@@ -32,10 +32,9 @@ const AppRouter = () => {
         <Route path="/job" element={<Job/>}/>
         <Route path="/postjob" element={<PostJob/>}/>
         <Route path="/joblist" element={<JobList/>}/>
-        <Route path="/updatejob" element={<UpdateJob/>}/>
+        <Route path="/jobdetails/:id" element={<JobDetails/>}/>
+        <Route path="/companyinfo" element={<CommpanyInfo/>}/>
         <Route path="/personinfo" element={<PersonInfo/>}/>
-        <Route path="/commpanyinfo" element={<CommpanyInfo/>}/>
-        <Route path="/joblist/:jobId" element={<JobDetails />} />
 
       </Routes>
 

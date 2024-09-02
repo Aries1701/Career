@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import Form from 'react-bootstrap/Form';
-
-
-
+import JobList from './JobList/JobList';
 
 const Home = () => {
   const [jobs, setJobs] = useState([]);
@@ -15,7 +13,6 @@ const Home = () => {
   useEffect(() => {
     fetchJobs();
   }, []);
-
 
   const companies = [
     {
@@ -96,7 +93,7 @@ const Home = () => {
 
         <section className="jobs">
           <div className="container">
-            <Link to="/joblist"><h2 className='jtitle'>Việc làm tốt nhất</h2></Link>
+          <Link to="/joblist"><h2 className='jtitle'>Việc làm tốt nhất</h2></Link>
             <div className="jobs-filter">
               <Form.Select class="form-select form-select-sm" aria-label="Default select example" size='sm' value={filter} onChange={handleFilterChange}>
               <option value="all">Tất cả</option>
@@ -108,25 +105,7 @@ const Home = () => {
     </Form.Select>
             </div>
             <div className="jobs-list">
-              {jobs.map((job) => (
-                <Link to={`/jobs/${job.id}`} key={job.id} className="job-card">
-                  <div className="job-card-header">
-                    <h3>{job.title}</h3>
-                    <span className="company">{job.company}</span>
-                  </div>
-                  <div className="job-card-body">
-                    <p className="location">{job.location}</p>
-                    <p className="salary">{job.salary}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-            <div className="pagination">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                <button key={page} onClick={() => handlePageChange(page)}>
-                  {page}
-                </button>
-              ))}
+              <JobList/>
             </div>
           </div>
         </section>

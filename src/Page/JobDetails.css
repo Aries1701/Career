@@ -1,0 +1,104 @@
+.title-detail {
+  border: 1px solid black;
+  width: 800px;
+  height: 250px;
+  border-radius: 10px;
+  margin: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.title-detail h2 {
+  margin-left: 10px;
+  width: 600px;
+}
+
+.title-detail button {
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+.btn-plane {
+  width: 500px;
+}
+
+.title-container {
+  width: 600px;
+  display: flex;
+  margin-left: 20px;
+  justify-content: space-evenly;
+}
+
+.date {
+  display: flex;
+  margin-left: 10px;
+}
+
+.info-container {
+  border: 1px solid black;
+  width: 300px;
+  height: 250px;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.detail-info {
+  display: flex;
+  align-items: baseline;
+  margin-left: 10px;
+
+}
+
+.detail-info h5 {
+  margin-left: 10px;
+}
+
+.company-info {
+  display: flex;
+  margin: 10px;
+
+}
+
+.company-info img {
+  width: 70px;
+  height: 70px;
+  margin-right: 5px;
+  border: 1px solid rgb(124, 121, 121);
+  border-radius: 10px;
+}
+
+.top-detail {
+  display: flex;
+  justify-content: center;
+}
+
+.detail {
+  border: 1px solid black;
+  width: 800px;
+  border-radius: 10px;
+  margin: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.detail-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.more-info {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 300px;
+  height: 200px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.bot-detail {
+  display: flex;
+  justify-content: center
+}
